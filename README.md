@@ -5,7 +5,7 @@ a look right there !
 
 ## Installation
 ```python
-pip install drf_jsonpatch
+pip install drf-jsonpatch
 ```
 
 Then configure your app's settings :
