@@ -21,7 +21,7 @@ patch.tree.body.insert(13, import_jsonpatch)
 # Get class's node
 BaseSerializer = None
 for branch in patch.tree.body:
-    if isinstance(ast.ClassDef, branch) and branch.name == "BaseSerializer":
+    if isinstance(branch, ast.ClassDef) and branch.name == "BaseSerializer":
         BaseSerializer = branch
         break
 else:
@@ -30,7 +30,7 @@ else:
 # Get __init__'s node
 init_method = None
 for branch in BaseSerializer.body:
-    if isinstance(ast.FunctionDef, branch) and branch.name == "__init__":
+    if isinstance(branch, ast.FunctionDef) and branch.name == "__init__":
         init_method = branch
         break
 else:
