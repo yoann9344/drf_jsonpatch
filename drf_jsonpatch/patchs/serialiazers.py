@@ -3,7 +3,11 @@ import ast
 import rest_framework.serializers as module_to_patch
 
 from drf_jsonpatch.patcher import Patcher
-from drf_jsonpatch.nodes.serialiazers import import_jsonpatch, if_apply_jsonpatch
+from drf_jsonpatch.nodes.serialiazers import (
+    import_jsonpatch,
+    import_apply_json_patch,
+    if_apply_jsonpatch,
+)
 
 
 patch = Patcher(module_to_patch)
@@ -12,6 +16,11 @@ patch = Patcher(module_to_patch)
 # ---- import jsonpatch ----
 # added between django imports and drf (just for the beauty)
 patch.tree.body.insert(13, import_jsonpatch)
+
+
+# ---- from drf_jsonpatch import apply_json_patch ----
+# added between django imports and drf (just for the beauty)
+patch.tree.body.insert(14, import_apply_json_patch)
 
 
 # ---- if isinstance(data, jsonpatch.JsonPatch): ----
