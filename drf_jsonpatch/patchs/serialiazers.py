@@ -14,7 +14,7 @@ patch = Patcher(module_to_patch)
 patch.tree.body.insert(13, import_jsonpatch)
 
 
-# ---- if isinstance(data, JsonPatch): ----
+# ---- if isinstance(data, jsonpatch.JsonPatch): ----
 # Must be added in BaseSerializer.__init__
 # before `self.initial_data`'s assignment
 

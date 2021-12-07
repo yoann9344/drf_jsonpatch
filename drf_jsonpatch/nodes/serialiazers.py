@@ -24,7 +24,14 @@ import_jsonpatch = Import(names=[alias(name="jsonpatch")])
 if_apply_jsonpatch = If(
     test=Call(
         func=Name(id="isinstance", ctx=Load()),
-        args=[Name(id="data", ctx=Load()), Name(id="JsonPatch", ctx=Load())],
+        args=[
+            Name(id="data", ctx=Load()),
+            Attribute(
+                value=Name(id="jsonpatch", ctx=Load()),
+                attr="JsonPatch",
+                ctx=Load(),
+            ),
+        ],
         keywords=[],
     ),
     body=[
