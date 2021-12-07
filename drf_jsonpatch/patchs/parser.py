@@ -1,7 +1,7 @@
 import rest_framework.parsers as module_to_patch
 
-from patcher import Patcher
-from nodes.parser import import_jsonpatch, class_JSONPatchParser
+from drf_jsonpatch.patcher import Patcher
+from drf_jsonpatch.nodes.parser import import_jsonpatch, class_JSONPatchParser
 
 
 patch = Patcher(module_to_patch)

@@ -2,8 +2,8 @@ import ast
 
 import rest_framework.serializers as module_to_patch
 
-from patcher import Patcher
-from nodes.serialiazers import import_jsonpatch, if_apply_jsonpatch
+from drf_jsonpatch.patcher import Patcher
+from drf_jsonpatch.nodes.serialiazers import import_jsonpatch, if_apply_jsonpatch
 
 
 patch = Patcher(module_to_patch)
