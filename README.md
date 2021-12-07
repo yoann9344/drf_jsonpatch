@@ -32,4 +32,4 @@ REST_FRAMEWORK = {
 
 
 ## Concept
-Cause drf is already full of functionalities, I had to patch it.
+Cause drf is already [full](https://github.com/encode/django-rest-framework/pull/8274) of functionalities, I had to patch it.
